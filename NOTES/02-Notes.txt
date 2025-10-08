@@ -1,0 +1,74 @@
+There is a Part of Heap Memory called String Pool.
+STRING POOL VS HEAP MEMORY:-
+
+The String Pool in Java (also called the String Intern Pool)
+is a special memory region inside the JVM Heap that stores unique string
+literals to optimize memory usage and improve performance.
+
+When you write code like this:
+         String s1 = "Prateek";
+         String s2 = "Prateek";
+Both s1 and s2 point to the same object in the String Pool, not two different ones.
+That’s because Java keeps only one copy of each distinct string literal ('Prateek' in this case)
+        String s3 =  "Prateek";
+        will also point to same object in string pool. this helps on memory optimisation
+ -> ekk pool hai jisme apke sare unique string literals pade h ,
+  jabh bhi aap koi string create kroge joki uss pool pe present h to uss
+  varibale ko bhi same string alot ho jayegi internally.
+
+2. Why This Exists
+Strings are immutable in Java — once created, they cannot change.
+So if multiple references share the same string, no one can modify it — which makes sharing safe.
+Hence, Java reuses string objects to:
+Save memory. :
+    String x = "abc";
+    String y = "abc";
+    String z = "abc";
+    → Only one object "abc" is stored in the pool, and all references point to it.
+Improve speed when comparing strings (because references can be compared).
+
+🔹 4. Examples to Understand Behavior :
+
+✅ Example 1: String Literals :-
+    String a = "Hello";
+    String b = "Hello";
+
+    System.out.println(a == b); // true
+Both refer to the same object in the String Pool.
+
+❌ Example 2: Using new Keyword :-
+    String a = new String("Hello");
+    String b = new String("Hello");
+
+    System.out.println(a == b); // false
+Each new String() creates a new object in heap, outside the string pool.
+
+✅ Example 3: Interning :-
+    String a = new String("Hello");
+    String b = a.intern();
+    String c = "Hello";
+
+    System.out.println(b == c); // true
+
+ .INTERN()
+
+intern() manually puts the string into the pool (or returns the existing pooled instance).
+
+🔹 1. Basic Definition
+    intern() is a method of the String class used to store or retrieve a string from the String Pool.
+    String s1 = new String("Java");  // YE TO OBJECT CREATE HUA H JOKI STRING POOL ME NAHI JATA . : ONLY STRING LITERALS GO IN STRINGPOOL.
+    String s2 = s1.intern();
+    String s3 = "Java";
+    System.out.println(s1 == s2); // false
+    System.out.println(s2 == s3); // true
+
+🔹 2. What Actually Happens Internally
+    When you call s.intern(), the JVM does the following:
+        Checks if the String Pool already contains a string equal to s.
+            If yes, it returns the pooled reference.
+            If no, it adds the string to the pool and returns that pooled reference.
+        The String Pool is a special memory area inside the JVM heap used to store unique immutable string instances.
+    immutable : that can not be changed.
+    Immutable means cannot be changed after creation.
+    In Java:
+    When you modify a String, you’re not changing the original — you’re creating a new string object.
