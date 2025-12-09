@@ -1,8 +1,6 @@
 package com.JavaBasics.datatypes;
 
-import java.lang.reflect.Type;
-
-public class DataTypes {
+public class a_DataTypes {
     public static void main(){
         System.out.println("hi");
 
@@ -71,6 +69,13 @@ public class DataTypes {
 //
 //        thats the reason why java is not pure Object Oriented language because there are primitive data types.
 
+/*  In Pure Object Oriented Languages there must be no primitive datatypes ; even int, bool etc. these must be classes only not primitive datatypes.
+        ->Java breaks this rule.
+              Java has 8 primitive types: byte, short, int, long, float, double, char, boolean.
+              These are stored as raw values, not as objects, not created using new, and they do not belong to any class.
+        ->Java introduced wrapper classes (Integer, Boolean, etc.) to provide object versions, but primitives still exist.
+              Their existence means Java is not purely object-oriented, only object-based with OOP features.
+* */
         long lg = 23232l;  // last me l dinotes that it is long otherwise it is considered as integer.
         float fl = 23.423f; // float value : use f at end.
         double db = 20.2025;

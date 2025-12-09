@@ -1,6 +1,6 @@
 package com.JavaBasics.datatypes;
 
-public class StringOperations {
+public class d_StringOperations {
     public static void main(String[] args) {
         // 1. Creation
         String s1 = "Java";  // string Object literal

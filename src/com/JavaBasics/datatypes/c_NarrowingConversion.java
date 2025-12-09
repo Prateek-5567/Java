@@ -1,6 +1,6 @@
 package com.JavaBasics.datatypes;
 
-public class NarrowingConversion {
+public class c_NarrowingConversion {
     public static void main(String args[]){
         System.out.println("Narrowing conversion Example:");
 

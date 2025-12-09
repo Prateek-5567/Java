@@ -1,6 +1,6 @@
 package com.JavaBasics.datatypes;
 
-public class WideningConversion {
+public class e_WideningConversion {
     public static void main(String args[]){
 
         // widening conversion is int can hold short value without any data loss ; short can hold byte ; so on..

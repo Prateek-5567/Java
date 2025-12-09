@@ -1,20 +1,33 @@
 package com.JavaBasics.datatypes;
 
-public class moreDataTypes {
+public class b_ClassBasedDataTypes {
     public static void main(String args[]){
+        // String
         // Class based data Types :  two ways to create :
         String s1 = "Hello";        // using string literal
         String s2 = new String("Hello"); // using class constructor.
         System.out.println(s1 + ' ' + s2 );
 
         // as you know jvm is responsible to run you bytecode ie actual execution .
-        // IN JVM : the space to create objects of CLasses is called heap memory.
+        // IN JVM : the space to create objects of Classes is called heap memory.
         // object are created in heap memory in jvm;
 
         // There is a Part of Heap Memory called String Pool.
         // STRING POOL VS HEAP MEMORY:-
         /*
-           go to `./NOTES/02-Notes.txt`
+            String Pool
+                A special area inside the heap.
+                Stores only literal strings and interned strings.
+                Avoids duplicates → same literal points to the same object.
+                Faster access, memory-efficient.
+
+            Heap (General Heap Memory)
+                Stores all objects, including Strings created with new.
+                Every new String("abc") creates a separate object, even if same content exists in pool.
+                No automatic deduplication.
+            Core distinction
+            Pool = shared, deduplicated, optimized.
+            Heap = normal object storage, each object separate.
          */
 
         String str1 = "Prateek";
@@ -25,8 +38,9 @@ public class moreDataTypes {
         str2="Jaat";
         System.out.println(str1+str2);
         // to modify karne se unlink bhi ho ja rhe h yee. : ab vo alag alag hai
+        System.out.println(str1==str2);
 
-        String str3 = new String("Prateek");
+        String str3 = new String("Prateek"); // created in heap memory not in String Pool.
         System.out.println(str1==str3);  // false as they are two diffrent objects bhale hi value same ho.
 
     // very imp point : when write str1 == str2 values are not compared : String is a class and String s="abc"
@@ -47,8 +61,8 @@ public class moreDataTypes {
         Immutable means cannot be changed after creation.
         In Java:
         When you modify a String, you’re not changing the original — you’re creating a new string object.
-String a="aditya";
-a="abhi" // creating a new String Literal Not modifying the previous one.
+        String a="aditya";
+        a="abhi" // creating a new String Literal Not modifying the previous one.
          */
     }
 }
