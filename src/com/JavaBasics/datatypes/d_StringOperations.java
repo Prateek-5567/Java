@@ -1,17 +1,28 @@
 package com.JavaBasics.datatypes;
 
+/*
+Static Variables (Class Variables):-
+    Belong to the class, not to any object. One single copy exists for all objects.
+    Used for shared state across all instances (example: count of objects created).
+    Initialized when the class is loaded. Lifetime = entire program run.
+Static Methods (Class Methods):-
+    Also belong to the class, not to objects. Called using class name.
+    Cannot access non-static variables or instance methods because no object context exists.
+    Used for utility functions or behavior that does not depend on object state (e.g., Math.max).
+    Overloading allowed; overriding not allowed (because method dispatch is compile-time for statics).
+*/
 public class d_StringOperations {
     public static void main(String[] args) {
         // 1. Creation
-        String s1 = "Java";  // string Object literal
+        String s1 = "Java";  // string literal
         String s2 = new String("Java");  // string Object
         String s3 = "Programming";
 
         // 2. Length
         System.out.println("Length: " + s1.length()); // 4
 
-        // aage jitne bhi ye opertations h mostly me same string change nai ho rhi nai string create ho rhi h
-        // .i.e sare methods object ka refrence leke ya kuch input leke run ho rhe h aur ek kuch return bhi kar rhe h mnostly string .
+        // aage jitne bhi ye operations h mostly me same string change nai ho rhi nai string create ho rhi h
+        // .i.e sare methods object ka reference leke ya kuch input leke run ho rhe h aur kuch return bhi kar rhe h mostly string .
 
         // 3. Character Access
         System.out.println("Char at 2: " + s1.charAt(2));
@@ -61,12 +72,14 @@ public class d_StringOperations {
         System.out.print("Char Array: ");
         for (char c : chars)
             System.out.print(c + " ");
-        System.out.println();
+        System.out.println(); // println adds a new line at end of whatever you are printing.
 
         // 13. ValueOf (convert to String)
         int num = 100;
         String strNum = String.valueOf(num);
         System.out.println("ValueOf int: " + strNum);
+
+// jo class name ka use karke access ho vo static methods hote h .
 
         // 14. Join
         String joined = String.join(" - ", "C", "C++", "Java", "Python");
@@ -78,12 +91,13 @@ public class d_StringOperations {
         /*
         🔹 1. Basic Definition
             intern() is a method of the String class used to store or retrieve a string from the String Pool.
-            String s1 = new String("Java");
-            String s2 = s1.intern();
-            String s3 = "Java";
+            String s1 = new String("Java"); // heap
+            String s2 = s1.intern(); // string pool
+            String s3 = "Java"; // literals are created in string pool : and "Java" already exists so reference is returned.
 
-            System.out.println(s1 == s2); // false
-            System.out.println(s2 == s3); // true
+//      here we compare references : -
+            System.out.println(s1 == s2); // false ; as they hold diffrent ref : one in heap other in string pool.
+            System.out.println(s2 == s3); // true ; as they hold same ref.
 
         🔹 2. What Actually Happens Internally
             When you call s.intern(), the JVM does the following:
