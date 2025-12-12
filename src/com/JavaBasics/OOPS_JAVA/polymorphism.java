@@ -5,7 +5,9 @@ Polymorphism works through upcasting
 Animal a1 = new Cat();
 Call -> a1.sound() runs Cat’s version.
  */
-
+/*
+ek class ke andar multiple classes bana sakte h, just make sure public class sirf ekk hi ho jiska name same as file ho
+ */
 public class polymorphism {
     // polymorphism allows methods to perform different tasks based on the object that calls them
     // Compile Time : Method Overloading ;

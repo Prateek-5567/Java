@@ -1,8 +1,11 @@
 package com.JavaBasics.MultiThreading;
-
+import com.JavaBasics.OOPS_JAVA.Animal;
 public class a {
     public static void main(){
-
+        Animal animal1 = new Animal();
+        System.out.println("Hello");
+        System.out.println(Thread.currentThread().getName()); // op : main
+        // main thread begins running immediately as java program starts.
     }
 }
 /*
