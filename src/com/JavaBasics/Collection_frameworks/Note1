@@ -1,0 +1,31 @@
+Collection Frameworks (arrays,sets etc)
+    - it provides a interface and classes that help in managing group of objects.
+
+ Before the introduction of the Collection Framework in JDK 1.2,
+  Java used to rely on a variety of classes like Vector, Stack, Hashtable, and arrays
+   to store and manipulate groups of objects.
+
+However these individual classes had several drawbacks :
+
+1  • Inconsistency: Each class had a different way of managing collections, leading to confusion
+        and a steep learning curve.
+2  • Lack of inter-operability: These classes were not designed to work together seamlessly.(no interconnection)
+3  • No common interface: There was no common interface for all these classes, which meant
+        you couldn't write generic algorithms that could operate on different types of collections.
+
+look at img.png , img_1.png
+
+iterable and collection are frameworks
+# 1. Lists is a interface jisko implement karti hai kuch classes jese ki ArrayList , LinkedList , Vector , Stack
+    - rmbr : these are classes so 1st letter capital.
+        - List = ordered collection
+eg ArrayList<int> => ArrayList and other classes of collection framework expects wrapper class i.e Class ke andar bhi class ki chahiye
+ so ArrayList<Integer> is correct way to declare in java.
+
+# 2. Set is a interface : implemented by some classes like HashSet , LinkedHashSet , EnumSet , TreeSet , SortedSet.
+      - Set = unique values
+
+# 3. Map interface - HashMap , LinkedHashMap  , HashTable
+      - Map : Key-Value pairs.
+
+// interface we very well know is a skeleton or structure from which classes can inherit .
